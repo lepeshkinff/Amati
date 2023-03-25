@@ -27,12 +27,4 @@ namespace Amati.UI.Forms
             plainsGrid.Init(palinsDataSource!);
         }
     }
-
-    public class ConcretetableForm<T> : TableViewForm
-    {
-        public ConcretetableForm(IDataSource<T>? palinsDataSource) 
-            : base(palinsDataSource)
-        {
-        }
-    }
 }

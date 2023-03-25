@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gridGV = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchTb = new System.Windows.Forms.TextBox();
             this.searchLb = new System.Windows.Forms.Label();
             this.pagerCb = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridGV)).BeginInit();
@@ -51,15 +51,16 @@
             this.gridGV.Size = new System.Drawing.Size(844, 258);
             this.gridGV.TabIndex = 0;
             // 
-            // textBox1
+            // searchTb
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.searchTb.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(51, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(796, 23);
-            this.textBox1.TabIndex = 1;
+            this.searchTb.Location = new System.Drawing.Point(51, 26);
+            this.searchTb.Name = "searchTb";
+            this.searchTb.Size = new System.Drawing.Size(796, 23);
+            this.searchTb.TabIndex = 1;
+            this.searchTb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // searchLb
             // 
@@ -90,7 +91,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pagerCb);
             this.Controls.Add(this.searchLb);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchTb);
             this.Controls.Add(this.gridGV);
             this.MinimumSize = new System.Drawing.Size(150, 300);
             this.Name = "TableViewControl";
@@ -104,7 +105,7 @@
         #endregion
 
         private DataGridView gridGV;
-        private TextBox textBox1;
+        private TextBox searchTb;
         private Label searchLb;
         private ComboBox pagerCb;
     }

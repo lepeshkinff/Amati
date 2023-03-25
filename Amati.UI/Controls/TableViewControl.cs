@@ -43,7 +43,8 @@ namespace Amati.UI.Controls
                 pagerCb.SelectedIndex,
                 _pageSize,
                 gridGV.SortedColumn?.DataPropertyName,
-                gridGV.SortOrder != SortOrder.Descending);
+                gridGV.SortOrder != SortOrder.Descending,
+                search);
 
             DataBind(data);
         }
@@ -53,6 +54,20 @@ namespace Amati.UI.Controls
             gridGV.DataSource = data;
             
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            search = searchTb.Text;
+            var data = _dataSource!.GetPage(
+                pagerCb.SelectedIndex,
+                _pageSize,
+                gridGV.SortedColumn?.DataPropertyName,
+                gridGV.SortOrder != SortOrder.Descending,
+                search);
+            DataBind(data);
+        }
+
+        private string search;
     }
 
 }
